@@ -1,0 +1,2 @@
+class UpdateUserModelForGithubLogin < ApplicationRecord
+end

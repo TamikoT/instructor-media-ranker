@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     render_404 unless @user
   end
 
-  def create
+  def github_callback
     auth_hash = request.env['omniauth.auth']
-    
+
     raise
 end
