@@ -54,7 +54,7 @@ group :development, :test do
   gem 'pry-rails'
 
   # T_T for .env file (.gitignore)
-  gem 'dot env-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
