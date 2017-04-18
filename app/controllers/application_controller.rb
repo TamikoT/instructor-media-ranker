@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
-private
+  private
   def find_user
-    if session[:user_id]
+    unless session[:user_id].nil?
       @login_user = User.find_by(id: session[:user_id])
     end
   end

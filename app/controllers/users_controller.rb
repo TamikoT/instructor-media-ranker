@@ -1,17 +1,18 @@
 class UsersController < ApplicationController
+
   def index
     @users = User.all
   end
 
   def show
     @user = User.find_by(id: params[:id])
-    render_404 unless @user
+    # render_404 unless @user
   end
 
   def github_callback
     auth_hash = request.env['omniauth.auth']
 
-    user = User.find_by(provider: params[:provider], git_uid: auth_hash['uid'])
+    user = User.find_by(provider: params[:provider], git_uid: auth_hash['info']['uid'])
 
     if user.nil?
       # new User is created
