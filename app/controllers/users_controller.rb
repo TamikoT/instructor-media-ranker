@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def github_callback
     auth_hash = request.env['omniauth.auth']
 
-    user = User.find_by(provider: params[:provider], git_uid: auth_hash['info']['uid'])
+    user = User.find_by(provider: params[:provider], git_uid: auth_hash['uid'])
 
     if user.nil?
       # new User is created

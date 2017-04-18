@@ -8,7 +8,7 @@ class User < ApplicationRecord
     user = User.new
     user.username = auth_hash["info"]["nickname"]
     user.email = auth_hash["info"]["email"]
-    user.git_uid = auth_hash["info"]["uid"]
+    user.git_uid = auth_hash["uid"]
     user.provider = "github"
     return user
   end
